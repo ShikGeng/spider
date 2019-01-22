@@ -47,7 +47,7 @@ public class Runner implements CommandLineRunner {
         // 定义作业核心配置
         JobCoreConfiguration simpleCoreConfig = JobCoreConfiguration
                 .newBuilder("demoSimpleJob", "0 0/1 * * * ?",3)
-                .shardingItemParameters("0=a,1=b,2=c").build();
+                .shardingItemParameters("0=a,1=b").build();
         // 定义SIMPLE类型配置
         SimpleJobConfiguration simpleJobConfig = new SimpleJobConfiguration(simpleCoreConfig, SimpleDemoJob.class.getCanonicalName());
         // 定义Lite作业根配置

@@ -1,4 +1,4 @@
-package cc.shik.job;
+package com.rrd.teg.job;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.asm.ByteVector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +33,7 @@ public class SimpleDemoJob implements SimpleJob {
         webDriver.get("http://www.baidu.com");
 
         try {
-            WebElement search_text = webDriver.findElement(By.xpath(""));
+            WebElement search_text = webDriver.findElement(By.id("kw"));
             WebElement search_button = webDriver.findElement(By.id("su"));
 
             search_text.sendKeys("培训");

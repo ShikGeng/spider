@@ -1,6 +1,6 @@
-package cc.shik.schedule;
+package com.rrd.teg.schedule;
 
-import cc.shik.job.SimpleDemoJob;
+import com.rrd.teg.job.SimpleDemoJob;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;

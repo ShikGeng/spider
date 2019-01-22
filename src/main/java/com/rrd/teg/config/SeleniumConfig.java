@@ -1,11 +1,8 @@
-package cc.shik.config;
+package com.rrd.teg.config;
 
-import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,6 +24,8 @@ public class SeleniumConfig {
     public WebDriver selenium() {
 //        Proxy proxy = new Proxy();
 //        String proxyIpAndPort = "http://localhost:1080";
+//
+//        // 判断 proxyIpAndPort 为空
 //        System.out.println(proxyIpAndPort);
 //        proxy.setHttpProxy(proxyIpAndPort).setFtpProxy(proxyIpAndPort).setSslProxy(proxyIpAndPort);
 //        DesiredCapabilities cap = new DesiredCapabilities();

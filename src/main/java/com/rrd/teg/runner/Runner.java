@@ -1,5 +1,6 @@
 package com.rrd.teg.runner;
 
+import com.dangdang.ddframe.job.lite.api.JobScheduler;
 import com.rrd.teg.job.SimpleDemoJob;
 import com.dangdang.ddframe.job.config.JobCoreConfiguration;
 import com.dangdang.ddframe.job.config.simple.SimpleJobConfiguration;
@@ -31,7 +32,7 @@ public class Runner implements CommandLineRunner {
      */
     @Override
     public void run(String... strings) throws Exception {
-//        new JobScheduler(createRegistryCenter(), createJobConfiguration()).init();
+        new JobScheduler(createRegistryCenter(), createJobConfiguration()).init();
 //        this.simpleDemoJob.execute(null);
     }
 
@@ -44,7 +45,9 @@ public class Runner implements CommandLineRunner {
 
     private static LiteJobConfiguration createJobConfiguration() {
         // 定义作业核心配置
-        JobCoreConfiguration simpleCoreConfig = JobCoreConfiguration.newBuilder("demoSimpleJob", "0 0/1 * * * ?",1).build();
+        JobCoreConfiguration simpleCoreConfig = JobCoreConfiguration
+                .newBuilder("demoSimpleJob", "0 0/1 * * * ?",3)
+                .shardingItemParameters("0=a,1=b,2=c").build();
         // 定义SIMPLE类型配置
         SimpleJobConfiguration simpleJobConfig = new SimpleJobConfiguration(simpleCoreConfig, SimpleDemoJob.class.getCanonicalName());
         // 定义Lite作业根配置
